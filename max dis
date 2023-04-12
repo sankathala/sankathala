@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+int main() {
+    int n, i, j, temp;
+    float average;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Sort the array in descending order
+    for(i = 0; i < n; i++)
+    {
+        for(j = i+1; j < n; j++)
+        {
+            if(arr[i] < arr[j])
+            {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Find the second largest and smallest element in the array
+    int secondLargest = arr[1];
+    int smallest = arr[n-1];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] < smallest) 
+        {
+            smallest = arr[i];
+        }
+        if(arr[i] > secondLargest && arr[i] != arr[0])
+        {
+            secondLargest = arr[i];
+       
+    return 0;
+}
